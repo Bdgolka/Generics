@@ -3,19 +3,19 @@ package com.bdgolka;
 /**
  * Created by bdgolka on 08.01.2017.
  */
-public class CircularBuffer<T>{
+public class StringCircularBuffer {
 
-    private T[] buffer;
+    private String[] buffer;
     private int readCursor = 0;
     private int writeCursor = 0;
 
-    public CircularBuffer(int size) {
-        buffer = (T[]) new Object[size];
+    public StringCircularBuffer(int size) {
+        buffer = new String[size];
     }
 
-    public T pool() {
+    public String pool() {
 
-        final T value = buffer[readCursor];
+        final String value = buffer[readCursor];
         if(value != null){
             buffer[readCursor] = null;
             readCursor = next(readCursor);
@@ -23,7 +23,7 @@ public class CircularBuffer<T>{
         return value;
     }
 
-    public boolean offer(T value) {
+    public boolean offer(String value) {
         if(buffer[writeCursor] != null){
             return false;
         }
