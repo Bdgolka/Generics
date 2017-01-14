@@ -23,5 +23,9 @@ public class SortingExample {
         Collections.sort(madMen, new AgeComparator() );
 
         System.out.println(madMen);
+
+        Collections.sort(madMen, new ReverseComparator<>(new AgeComparator()) );
+
+        System.out.println(madMen);
     }
 }
