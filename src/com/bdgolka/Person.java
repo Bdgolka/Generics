@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Created by bdgolka on 09.01.2017.
  */
-public final class Person {
+public class Person {
 
     private final String name;
     private final int age;
